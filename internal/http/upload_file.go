@@ -154,6 +154,9 @@ func (req *uploadFileRequest) commit() {
 	}
 	wg.Wait()
 
+	close(filesWritten)
+	close(errorChannel)
+
 	req.collectResults(filesWritten, errorChannel)
 }
 
@@ -163,6 +166,7 @@ func (req *uploadFileRequest) respond() {
 		log.Printf("error: %s", req.err.Error())
 	}
 
+	log.Println("Responding with success.")
 	req.ResponseWriter.Write([]byte("Files uploaded!"))
 }
 
