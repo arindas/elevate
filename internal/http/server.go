@@ -93,7 +93,7 @@ func (server *Server) ReadServeAddr() {
 		fmt.Sprintf(":%s", port)
 
 	log.Printf(
-		"Listening on address: %s\n",
+		"Listening on address: %s",
 		server.httpServer.Addr)
 }
 
