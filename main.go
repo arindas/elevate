@@ -14,7 +14,7 @@ func main() {
 
 	server := http.ServerInstance(
 		http.RequestHandler(
-			http.Routes(app.AppConfig{*baseDirectory}),
+			http.Routes(app.AppConfig{BaseDirectory: *baseDirectory}),
 			http.LoggingMiddleware,
 		),
 	)
