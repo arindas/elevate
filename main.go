@@ -1,11 +1,27 @@
 package main
 
-import "flag"
+import (
+	"flag"
+
+	"github.com/arindas/elevate/internal/app"
+	"github.com/arindas/elevate/internal/http"
+)
 
 var baseDirectory = flag.String("base_dir", ".", "Base directory for storing files.")
 
 func main() {
 	flag.Parse()
 
-	ServeApp(AppConfig{BaseDirectory: *baseDirectory})
+	server := http.ServerInstance(
+		http.RequestHandler(
+			http.Routes(app.AppConfig{*baseDirectory}),
+			http.LoggingMiddleware,
+		),
+	)
+
+	server.ReadServeAddr()
+	server.ListenAndServe()
+	server.Watch()
+
+	server.LogErrors()
 }

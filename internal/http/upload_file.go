@@ -1,4 +1,4 @@
-package main
+package http
 
 import (
 	"fmt"
@@ -9,6 +9,8 @@ import (
 	"os"
 	"path"
 	"sync"
+
+	"github.com/arindas/elevate/internal/app"
 )
 
 type uploadFileRequest struct {
@@ -164,7 +166,7 @@ func (req *uploadFileRequest) respond() {
 	req.ResponseWriter.Write([]byte("Files uploaded!"))
 }
 
-func UploadFileHandler(app AppConfig) http.Handler {
+func UploadFileHandler(app app.AppConfig) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		req := uploadFileRequestInstance(w, r)
 
