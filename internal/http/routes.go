@@ -1,10 +1,14 @@
 package http
 
-import "github.com/arindas/elevate/internal/app"
+import (
+	"net/http"
+
+	"github.com/arindas/elevate/internal/app"
+)
 
 func Routes(app app.AppConfig) []Route {
 	return []Route{
-		{"/", nil},
+		{"/", http.FileServer(http.Dir("./web"))},
 		{"/upload", UploadFileHandler(app)},
 	}
 }
