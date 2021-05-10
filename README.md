@@ -30,10 +30,3 @@ go build
 ```
 
 _As of now the binary requires the `web/` folder to be in the same directory._ This will change in the future with [go-embed](https://golang.org/pkg/embed/).
-
-## TODO
-
-- [x] Add a barebones html page with js for listing selected files.
-- [x] Implement file upload mechanism 
-- [x] Serve static files
-- [ ] Use [go-embed](https://golang.org/pkg/embed/) to embed the static files directory in the binary itself.
