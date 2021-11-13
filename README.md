@@ -1,4 +1,4 @@
-# elevate 🛗
+# `elevate`
 [![Go Reference](https://pkg.go.dev/badge/github.com/arindas/elevate.svg)](https://pkg.go.dev/github.com/arindas/elevate)
 
 `elevate` is a HTTP file upload server. Files are uploaded to the server's host file system.
