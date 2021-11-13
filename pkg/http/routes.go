@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	"github.com/arindas/elevate/internal/app"
+	"github.com/arindas/elevate/pkg/app"
 )
 
 func Routes(app app.AppConfig) []Route {

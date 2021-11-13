@@ -6,8 +6,8 @@ import (
 	"io/fs"
 	"log"
 
-	"github.com/arindas/elevate/internal/app"
-	"github.com/arindas/elevate/internal/http"
+	"github.com/arindas/elevate/pkg/app"
+	"github.com/arindas/elevate/pkg/http"
 )
 
 var baseDirectory = flag.String("base_dir", ".", "Base directory for storing files.")
