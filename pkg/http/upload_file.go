@@ -10,7 +10,7 @@ import (
 	"path"
 	"sync"
 
-	"github.com/arindas/elevate/internal/app"
+	"github.com/arindas/elevate/pkg/app"
 )
 
 type uploadFileRequest struct {
